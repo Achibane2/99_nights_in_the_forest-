@@ -1,494 +1,253 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Night in the Forest - Get Free Diamonds</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-      background: linear-gradient(to bottom, #0f172a, #1e3a8a, #0f172a);
-      color: #ffffff;
-      min-height: 100vh;
-    }
-
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-
-    /* ===== HOME PAGE ===== */
-    .home-page {
-      min-height: 100vh;
-      position: relative;
-      overflow: hidden;
-      background: linear-gradient(to bottom, #0f172a, #1e3a8a, #0f172a);
-    }
-
-    .home-page::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background-image: url('https://images.pexels.com/photos/1496374/pexels-photo-1496374.jpeg?auto=compress&cs=tinysrgb&w=1920');
-      background-size: cover;
-      background-position: center;
-      opacity: 0.1;
-    }
-
-    .home-content {
-      position: relative;
-      z-index: 10;
-      padding: 40px 20px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-    }
-
-    .header {
-      margin-top: 40px;
-      margin-bottom: 60px;
-    }
-
-    .header-icon {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 20px;
-      animation: pulse 2s infinite;
-    }
-
-    .header-icon svg {
-      width: 50px;
-      height: 50px;
-      color: #06b6d4;
-      filter: drop-shadow(0 0 15px rgba(6, 182, 212, 0.6));
-    }
-
-    @keyframes pulse {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.7; }
-    }
-
-    @keyframes shine {
-      0%, 100% { filter: drop-shadow(0 0 15px rgba(6, 182, 212, 0.6)); }
-      50% { filter: drop-shadow(0 0 25px rgba(6, 182, 212, 0.9)); }
-    }
-
-    .main-title {
-      font-size: 3.5rem;
-      font-weight: bold;
-      margin-bottom: 20px;
-      background: linear-gradient(to right, #06b6d4, #3b82f6);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    .subtitle {
-      font-size: 1.5rem;
-      color: #d1d5db;
-      margin-bottom: 30px;
-    }
-
-    .live-counter {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      background: rgba(34, 197, 94, 0.1);
-      border: 1px solid rgba(34, 197, 94, 0.4);
-      border-radius: 50px;
-      padding: 15px 25px;
-      backdrop-filter: blur(10px);
-      animation: pulse 2s infinite;
-      margin-bottom: 50px;
-    }
-
-    .live-counter svg {
-      width: 20px;
-      height: 20px;
-      color: #4ade80;
-    }
-
-    .live-counter-text {
-      color: #4ade80;
-      font-weight: 600;
-    }
-
-    .live-dot {
-      width: 8px;
-      height: 8px;
-      background: #4ade80;
-      border-radius: 50%;
-      animation: ping 1.5s infinite;
-    }
-
-    @keyframes ping {
-      0%, 100% { opacity: 1; }
-      75% { opacity: 0; }
-    }
-
-    .diamonds-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-      gap: 25px;
-      margin-bottom: 60px;
-      max-width: 500px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .diamond-card {
-      background: linear-gradient(135deg, rgba(30, 41, 59, 0.9), rgba(15, 23, 42, 0.9));
-      backdrop-filter: blur(10px);
-      border: 2px solid rgba(6, 182, 212, 0.3);
-      border-radius: 20px;
-      padding: 25px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-
-    .diamond-card:hover {
-      border-color: #06b6d4;
-      transform: scale(1.05);
-      box-shadow: 0 0 25px rgba(6, 182, 212, 0.3);
-    }
-
-    .diamond-icon-wrapper {
-      position: relative;
-      margin-bottom: 15px;
-      width: 100px;
-      height: 100px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .diamond-icon {
-      width: 80px;
-      height: 80px;
-      color: #06b6d4;
-      filter: drop-shadow(0 0 15px rgba(6, 182, 212, 0.6));
-      position: relative;
-      z-index: 2;
-    }
-
-    .diamond-card:hover .diamond-icon {
-      filter: drop-shadow(0 0 25px rgba(6, 182, 212, 0.9));
-      animation: shine 1s infinite;
-    }
-
-    .diamond-amount {
-      font-size: 2.5rem;
-      font-weight: bold;
-      color: #ffffff;
-      margin-bottom: 15px;
-    }
-
-    .diamond-get-btn {
-      width: 100%;
-      background: linear-gradient(135deg, #0891b2, #0284c7);
-      color: #ffffff;
-      border: none;
-      padding: 12px 20px;
-      border-radius: 10px;
-      font-weight: bold;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-
-    .diamond-get-btn:hover {
-      transform: scale(1.1);
-      box-shadow: 0 0 15px rgba(6, 182, 212, 0.5);
-    }
-
-    .instructions-box {
-      max-width: 600px;
-      background: rgba(30, 41, 59, 0.5);
-      backdrop-filter: blur(10px);
-      border-radius: 20px;
-      padding: 40px;
-      border: 1px solid rgba(6, 182, 212, 0.2);
-      margin-bottom: 40px;
-    }
-
-    .instructions-title {
-      font-size: 1.5rem;
-      font-weight: bold;
-      text-align: center;
-      color: #06b6d4;
-      margin-bottom: 30px;
-    }
-
-    .instruction-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 15px;
-      margin-bottom: 20px;
-    }
-
-    .instruction-number {
-      width: 32px;
-      height: 32px;
-      border-radius: 50%;
-      background: #06b6d4;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: bold;
-      flex-shrink: 0;
-    }
-
-    .instruction-text {
-      color: #d1d5db;
-      line-height: 1.6;
-    }
-
-    .footer-disclaimer {
-      text-align: center;
-      font-size: 0.85rem;
-      color: #9ca3af;
-      max-width: 700px;
-      line-height: 1.6;
-      margin-top: 30px;
-    }
-
-    .username-page,
-    .verification-page {
-      min-height: 100vh;
-      background: linear-gradient(to bottom, #0f172a, #1e3a8a, #0f172a);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-    }
-
-    .hidden {
-      display: none !important;
-    }
-
-    @media (max-width: 768px) {
-      .main-title { font-size: 2.5rem; }
-      .subtitle { font-size: 1.2rem; }
-      .diamonds-grid { grid-template-columns: repeat(2, 1fr); gap: 15px; }
-      .button-group { flex-direction: column; gap: 15px; }
-    }
-  </style>
-</head>
-<body>
-  <div id="app"></div>
-
-  <script>
-    let currentPage = 'home';
-    let selectedDiamonds = 0;
-    let username = '';
-
-    function renderHome() {
-      document.getElementById('app').innerHTML = `
-        <div class="home-page">
-          <div class="home-content">
-            <div class="header">
-              <div class="header-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <circle cx="12" cy="12" r="10"></circle>
-                  <path d="M8 12h8M12 8v8"></path>
-                </svg>
-              </div>
-              <h1 class="main-title">Night in the Forest</h1>
-              <p class="subtitle">Get Free Diamonds Now!</p>
-              <div class="live-counter">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                  <circle cx="9" cy="7" r="4"></circle>
-                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-                </svg>
-                <span class="live-counter-text" id="counter">1,245 players are getting diamonds now</span>
-                <div class="live-dot"></div>
-              </div>
-            </div>
-
-            <div class="container">
-              <div class="diamonds-grid">
-                <div class="diamond-card" onclick="selectDiamond(20)">
-                  <div class="diamond-icon-wrapper">
-                    <svg class="diamond-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                      <polygon points="12 2 20 6 20 14 12 22 4 14 4 6 12 2"></polygon>
-                    </svg>
-                  </div>
-                  <div class="diamond-amount">20</div>
-                  <button class="diamond-get-btn">Get Now</button>
-                </div>
-
-                <div class="diamond-card" onclick="selectDiamond(100)">
-                  <div class="diamond-icon-wrapper">
-                    <svg class="diamond-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                      <polygon points="12 2 20 6 20 14 12 22 4 14 4 6 12 2"></polygon>
-                    </svg>
-                  </div>
-                  <div class="diamond-amount">100</div>
-                  <button class="diamond-get-btn">Get Now</button>
-                </div>
-
-                <div class="diamond-card" onclick="selectDiamond(250)">
-                  <div class="diamond-icon-wrapper">
-                    <svg class="diamond-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                      <polygon points="12 2 20 6 20 14 12 22 4 14 4 6 12 2"></polygon>
-                    </svg>
-                  </div>
-                  <div class="diamond-amount">250</div>
-                  <button class="diamond-get-btn">Get Now</button>
-                </div>
-
-                <div class="diamond-card" onclick="selectDiamond(700)">
-                  <div class="diamond-icon-wrapper">
-                    <svg class="diamond-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                      <polygon points="12 2 20 6 20 14 12 22 4 14 4 6 12 2"></polygon>
-                    </svg>
-                  </div>
-                  <div class="diamond-amount">700</div>
-                  <button class="diamond-get-btn">Get Now</button>
-                </div>
-              </div>
-
-              <div class="instructions-box">
-                <h2 class="instructions-title">How to Get Diamonds</h2>
-                <div class="instruction-item">
-                  <div class="instruction-number">1</div>
-                  <p class="instruction-text">Choose the number of diamonds you want.</p>
-                </div>
-                <div class="instruction-item">
-                  <div class="instruction-number">2</div>
-                  <p class="instruction-text">Enter your in-game username.</p>
-                </div>
-                <div class="instruction-item">
-                  <div class="instruction-number">3</div>
-                  <p class="instruction-text">Complete verification and receive diamonds instantly!</p>
-                </div>
-              </div>
-
-              <div class="footer-disclaimer">
-                <p>* Diamonds will be added to your account within 24 hours after verification.</p>
-                <p>By agreeing to this offer, you consent to completing sponsor offers. This is a promotional campaign.</p>
-              </div>
-            </div>
-          </div>
-        </div>`;
-      startCounterAnimation();
-    }
-
-    function renderUsername() {
-      document.getElementById('app').innerHTML = `
-        <div class="username-page">
-          <div class="username-container">
-            <div class="username-box">
-              <h1 class="username-title">Enter Your Username</h1>
-              <p class="username-subtitle">Enter your game account details to continue</p>
-
-              <div class="progress-steps">
-                <div class="step-circle active">1</div>
-                <div class="step-circle inactive">2</div>
-                <div class="step-circle inactive">3</div>
-              </div>
-
-              <form onsubmit="submitUsername(event)">
-                <div class="form-group">
-                  <label class="form-label">Username</label>
-                  <input type="text" id="usernameInput" class="form-input" placeholder="Enter your username" required>
-                </div>
-                <button type="submit" class="submit-btn">Next</button>
-              </form>
-
-              <div class="diamonds-display">
-                You will receive: ${selectedDiamonds} diamonds
-              </div>
-            </div>
-          </div>
-        </div>`;
-    }
-
-    function renderVerification() {
-      document.getElementById('app').innerHTML = `
-        <div class="verification-page">
-          <div class="verification-container">
-            <div class="verification-box">
-              <h1 class="verification-title">Account Verification</h1>
-              <p class="verification-subtitle">Please confirm your account details</p>
-
-              <div class="progress-steps">
-                <div class="step-circle active">1</div>
-                <div class="step-circle active">2</div>
-                <div class="step-circle inactive">3</div>
-              </div>
-
-              <div class="user-card">
-                <div class="user-avatar">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                    <circle cx="12" cy="7" r="4"></circle>
-                  </svg>
-                </div>
-                <p class="username-display">@${username}</p>
-              </div>
-
-              <p class="verification-question">Is this your account?</p>
-
-              <div class="button-group">
-                <button class="yes-btn" onclick="confirmYes()">Yes</button>
-                <button class="no-btn" onclick="confirmNo()">No</button>
-              </div>
-            </div>
-          </div>
-        </div>`;
-    }
-
-    function selectDiamond(amount) {
-      selectedDiamonds = amount;
-      currentPage = 'username';
-      renderUsername();
-    }
-
-    function submitUsername(event) {
-      event.preventDefault();
-      const input = document.getElementById('usernameInput');
-      if (input.value.trim()) {
-        username = input.value.trim();
-        currentPage = 'verification';
-        renderVerification();
-      }
-    }
-
-    function confirmYes() {
-      alert("Verification step completed (replace with your own link).");
-    }
-
-    function confirmNo() {
-      currentPage = 'username';
-      renderUsername();
-    }
-
-    function startCounterAnimation() {
-      let count = 1245;
-      setInterval(() => {
-        count += Math.floor(Math.random() * 3);
-        const counterElement = document.getElementById('counter');
-        if (counterElement) {
-          counterElement.textContent = count.toLocaleString('en-US') + ' players are getting diamonds now';
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Night in the Forest - Get Free Diamonds</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
         }
-      }, 3000);
-    }
 
-    renderHome();
-  </script>
+        @keyframes shine {
+            0%, 100% { filter: drop-shadow(0 0 15px rgba(6, 182, 212, 0.6)); }
+            50% { filter: drop-shadow(0 0 25px rgba(6, 182, 212, 0.9)); }
+        }
+
+        @keyframes ping {
+            0%, 100% { opacity: 1; }
+            75% { opacity: 0; }
+        }
+
+        .animate-pulse {
+            animation: pulse 2s infinite;
+        }
+
+        .animate-ping {
+            animation: ping 1.5s infinite;
+        }
+
+        .shine {
+            animation: shine 1s infinite;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-b from-slate-900 via-blue-900 to-slate-900">
+    <div id="app"></div>
+
+    <script>
+        let currentPage = 'home';
+        let selectedDiamonds = 0;
+        let username = '';
+        let counter = 1245;
+
+        function renderApp() {
+            const app = document.getElementById('app');
+
+            if (currentPage === 'home') {
+                app.innerHTML = `
+                    <div class="relative min-h-screen bg-gradient-to-b from-slate-900 via-blue-900 to-slate-900 overflow-hidden">
+                        <div class="absolute inset-0 bg-cover bg-center opacity-10" style="background-image: url('https://images.pexels.com/photos/1496374/pexels-photo-1496374.jpeg?auto=compress&cs=tinysrgb&w=1920')"></div>
+
+                        <div class="relative z-10 py-10 px-5 flex flex-col items-center text-center">
+                            <div class="mb-20 mt-10">
+                                <div class="inline-flex items-center justify-center mb-5 animate-pulse">
+                                    <svg class="w-12 h-12 text-cyan-400 drop-shadow-lg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <circle cx="12" cy="12" r="10"></circle>
+                                        <path d="M8 12h8M12 8v8"></path>
+                                    </svg>
+                                </div>
+                                <h1 class="text-5xl font-bold mb-5 bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">Night in the Forest</h1>
+                                <p class="text-2xl text-gray-300 mb-8">Get Free Diamonds Now!</p>
+
+                                <div class="inline-flex items-center gap-3 bg-green-500/10 border border-green-500/40 rounded-full px-6 py-4 backdrop-blur-sm animate-pulse mb-12">
+                                    <svg class="w-5 h-5 text-green-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                        <circle cx="9" cy="7" r="4"></circle>
+                                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                        <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                                    </svg>
+                                    <span class="text-green-400 font-semibold" id="counter">${counter.toLocaleString()} players getting diamonds now</span>
+                                    <div class="w-2 h-2 bg-green-400 rounded-full animate-ping"></div>
+                                </div>
+                            </div>
+
+                            <div class="max-w-5xl">
+                                <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-16 max-w-2xl mx-auto">
+                                    <div onclick="selectDiamond(20)" class="bg-gradient-to-br from-slate-700/90 to-slate-900/90 backdrop-blur border-2 border-cyan-400/30 rounded-3xl p-6 flex flex-col items-center cursor-pointer transition-all hover:border-cyan-400 hover:scale-105 hover:shadow-xl hover:shadow-cyan-400/30">
+                                        <div class="relative w-24 h-24 flex items-center justify-center mb-4">
+                                            <svg class="w-20 h-20 text-cyan-400 drop-shadow-lg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                                <polygon points="12 2 20 6 20 14 12 22 4 14 4 6 12 2"></polygon>
+                                            </svg>
+                                        </div>
+                                        <div class="text-4xl font-bold text-white mb-4">20</div>
+                                        <button class="w-full bg-gradient-to-r from-cyan-600 to-blue-600 text-white px-5 py-3 rounded-xl font-bold hover:scale-110 transition-all">Get Now</button>
+                                    </div>
+
+                                    <div onclick="selectDiamond(100)" class="bg-gradient-to-br from-slate-700/90 to-slate-900/90 backdrop-blur border-2 border-cyan-400/30 rounded-3xl p-6 flex flex-col items-center cursor-pointer transition-all hover:border-cyan-400 hover:scale-105 hover:shadow-xl hover:shadow-cyan-400/30">
+                                        <div class="relative w-24 h-24 flex items-center justify-center mb-4">
+                                            <svg class="w-20 h-20 text-cyan-400 drop-shadow-lg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                                <polygon points="12 2 20 6 20 14 12 22 4 14 4 6 12 2"></polygon>
+                                            </svg>
+                                        </div>
+                                        <div class="text-4xl font-bold text-white mb-4">100</div>
+                                        <button class="w-full bg-gradient-to-r from-cyan-600 to-blue-600 text-white px-5 py-3 rounded-xl font-bold hover:scale-110 transition-all">Get Now</button>
+                                    </div>
+
+                                    <div onclick="selectDiamond(250)" class="bg-gradient-to-br from-slate-700/90 to-slate-900/90 backdrop-blur border-2 border-cyan-400/30 rounded-3xl p-6 flex flex-col items-center cursor-pointer transition-all hover:border-cyan-400 hover:scale-105 hover:shadow-xl hover:shadow-cyan-400/30">
+                                        <div class="relative w-24 h-24 flex items-center justify-center mb-4">
+                                            <svg class="w-20 h-20 text-cyan-400 drop-shadow-lg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                                <polygon points="12 2 20 6 20 14 12 22 4 14 4 6 12 2"></polygon>
+                                            </svg>
+                                        </div>
+                                        <div class="text-4xl font-bold text-white mb-4">250</div>
+                                        <button class="w-full bg-gradient-to-r from-cyan-600 to-blue-600 text-white px-5 py-3 rounded-xl font-bold hover:scale-110 transition-all">Get Now</button>
+                                    </div>
+
+                                    <div onclick="selectDiamond(700)" class="bg-gradient-to-br from-slate-700/90 to-slate-900/90 backdrop-blur border-2 border-cyan-400/30 rounded-3xl p-6 flex flex-col items-center cursor-pointer transition-all hover:border-cyan-400 hover:scale-105 hover:shadow-xl hover:shadow-cyan-400/30">
+                                        <div class="relative w-24 h-24 flex items-center justify-center mb-4">
+                                            <svg class="w-20 h-20 text-cyan-400 drop-shadow-lg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                                <polygon points="12 2 20 6 20 14 12 22 4 14 4 6 12 2"></polygon>
+                                            </svg>
+                                        </div>
+                                        <div class="text-4xl font-bold text-white mb-4">700</div>
+                                        <button class="w-full bg-gradient-to-r from-cyan-600 to-blue-600 text-white px-5 py-3 rounded-xl font-bold hover:scale-110 transition-all">Get Now</button>
+                                    </div>
+                                </div>
+
+                                <div class="max-w-2xl bg-slate-700/50 backdrop-blur rounded-3xl p-10 border border-cyan-400/20 mb-10">
+                                    <h2 class="text-2xl font-bold text-center text-cyan-400 mb-8">How to Get Diamonds</h2>
+                                    <div class="flex items-start gap-4 mb-5">
+                                        <div class="w-8 h-8 rounded-full bg-cyan-400 flex items-center justify-center font-bold flex-shrink-0 text-slate-900">1</div>
+                                        <p class="text-gray-300 leading-relaxed">Choose the number of diamonds you want from the options above</p>
+                                    </div>
+                                    <div class="flex items-start gap-4 mb-5">
+                                        <div class="w-8 h-8 rounded-full bg-cyan-400 flex items-center justify-center font-bold flex-shrink-0 text-slate-900">2</div>
+                                        <p class="text-gray-300 leading-relaxed">Enter your in-game username</p>
+                                    </div>
+                                    <div class="flex items-start gap-4 mb-5">
+                                        <div class="w-8 h-8 rounded-full bg-cyan-400 flex items-center justify-center font-bold flex-shrink-0 text-slate-900">3</div>
+                                        <p class="text-gray-300 leading-relaxed">Complete verification and get your diamonds instantly!</p>
+                                    </div>
+                                </div>
+
+                                <div class="text-center text-sm text-gray-400 max-w-2xl leading-relaxed">
+                                    <p class="mb-3">* Diamonds will be added to your account within 24 hours after verification.</p>
+                                    <p>By accepting this offer, you agree to complete partner offers. This is a promotional offer from sponsors.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                startCounterAnimation();
+
+            } else if (currentPage === 'username') {
+                app.innerHTML = `
+                    <div class="min-h-screen bg-gradient-to-b from-slate-900 via-blue-900 to-slate-900 flex items-center justify-center px-5">
+                        <div class="w-full max-w-2xl">
+                            <div class="bg-gradient-to-br from-slate-700/90 to-slate-900/90 backdrop-blur rounded-3xl p-12 border-2 border-cyan-400/30 shadow-2xl">
+                                <h1 class="text-4xl font-bold text-center bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent mb-4">Enter Username</h1>
+                                <p class="text-center text-gray-300 text-lg mb-12">Enter your account information to continue</p>
+
+                                <div class="flex justify-center gap-5 mb-12">
+                                    <div class="w-12 h-12 rounded-full flex items-center justify-center font-bold text-lg bg-green-500 text-white shadow-lg shadow-green-500/50">1</div>
+                                    <div class="w-12 h-12 rounded-full flex items-center justify-center font-bold text-lg bg-slate-600/80 text-gray-400 border-2 border-cyan-400/30">2</div>
+                                    <div class="w-12 h-12 rounded-full flex items-center justify-center font-bold text-lg bg-slate-600/80 text-gray-400 border-2 border-cyan-400/30">3</div>
+                                </div>
+
+                                <form onsubmit="submitUsername(event)">
+                                    <div class="mb-8">
+                                        <label class="block text-white text-lg font-semibold mb-4">Username</label>
+                                        <input type="text" id="usernameInput" placeholder="Enter your username" required class="w-full bg-slate-700/80 border-2 border-cyan-400/30 rounded-2xl px-5 py-4 text-white text-lg focus:outline-none focus:border-cyan-400 transition-all">
+                                    </div>
+                                    <button type="submit" class="w-full bg-gradient-to-r from-blue-600 to-blue-800 text-white py-4 rounded-2xl font-bold text-lg hover:scale-105 transition-all shadow-lg shadow-blue-600/50">Next</button>
+                                </form>
+
+                                <div class="text-center mt-8 text-cyan-400 text-lg font-semibold">
+                                    You will receive: ${selectedDiamonds} diamonds
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                document.getElementById('usernameInput').focus();
+
+            } else if (currentPage === 'verification') {
+                app.innerHTML = `
+                    <div class="min-h-screen bg-gradient-to-b from-slate-900 via-blue-900 to-slate-900 flex items-center justify-center px-5">
+                        <div class="w-full max-w-2xl">
+                            <div class="bg-gradient-to-br from-slate-700/90 to-slate-900/90 backdrop-blur rounded-3xl p-12 border-2 border-cyan-400/30 shadow-2xl">
+                                <h1 class="text-4xl font-bold text-center bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">Account</h1>
+                                <h2 class="text-4xl font-bold text-center bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent mb-4">Verification</h2>
+                                <p class="text-center text-gray-300 text-lg mb-12">Confirm your account information</p>
+
+                                <div class="flex justify-center gap-5 mb-12">
+                                    <div class="w-12 h-12 rounded-full flex items-center justify-center font-bold text-lg bg-green-500 text-white shadow-lg shadow-green-500/50">1</div>
+                                    <div class="w-12 h-12 rounded-full flex items-center justify-center font-bold text-lg bg-green-500 text-white shadow-lg shadow-green-500/50">2</div>
+                                    <div class="w-12 h-12 rounded-full flex items-center justify-center font-bold text-lg bg-slate-600/80 text-gray-400 border-2 border-cyan-400/30">3</div>
+                                </div>
+
+                                <div class="bg-gradient-to-br from-slate-600/80 to-slate-700/80 border-2 border-cyan-400/40 rounded-3xl p-10 text-center mb-12 w-72 mx-auto">
+                                    <div class="w-28 h-28 border-4 border-cyan-400 rounded-full bg-slate-700/80 flex items-center justify-center mx-auto mb-6">
+                                        <svg class="w-14 h-14 text-cyan-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                            <circle cx="12" cy="7" r="4"></circle>
+                                        </svg>
+                                    </div>
+                                    <p class="text-white text-2xl font-bold">@${username}</p>
+                                </div>
+
+                                <p class="text-center text-xl font-bold text-white mb-12">Is this your account?</p>
+
+                                <div class="flex gap-5 justify-center">
+                                    <button onclick="confirmYes()" class="bg-gradient-to-r from-green-500 to-green-600 text-white px-10 py-3 rounded-2xl font-bold hover:scale-105 transition-all shadow-lg shadow-green-500/50">Yes</button>
+                                    <button onclick="confirmNo()" class="bg-slate-600/80 text-white border-2 border-cyan-400/30 px-10 py-3 rounded-2xl font-bold hover:scale-105 hover:border-cyan-400 transition-all">No</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }
+        }
+
+        function selectDiamond(amount) {
+            selectedDiamonds = amount;
+            currentPage = 'username';
+            renderApp();
+        }
+
+        function submitUsername(event) {
+            event.preventDefault();
+            const input = document.getElementById('usernameInput');
+            if (input.value.trim()) {
+                username = input.value.trim();
+                currentPage = 'verification';
+                renderApp();
+            }
+        }
+
+        function confirmYes() {
+            window.location.href = 'https://d1y3y09sav47f5.cloudfront.net/public/locker.php?it=4567189&key=f8098';
+        }
+
+        function confirmNo() {
+            currentPage = 'username';
+            renderApp();
+        }
+
+        function startCounterAnimation() {
+            setInterval(() => {
+                counter += Math.floor(Math.random() * 3);
+                const counterElement = document.getElementById('counter');
+                if (counterElement) {
+                    counterElement.textContent = counter.toLocaleString() + ' players getting diamonds now';
+                }
+            }, 3000);
+        }
+
+        renderApp();
+    </script>
 </body>
 </html>
